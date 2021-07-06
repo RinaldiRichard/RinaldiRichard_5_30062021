@@ -37,6 +37,10 @@ body {
     grid-template-rows: auto;
     column-gap: 2em;
     row-gap: 7em;
+    @media  screen and (max-width:700px) {    
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;    
+    }
     .titleGrid {
     grid-column: 1/-1;
     text-align: center;
@@ -81,11 +85,12 @@ body {
     background-color: rgb(190, 166, 247);
     ul {
         display: flex;
-        justify-content: space-between;
-        padding: 2em 5em;
+        justify-content: space-evenly;
+        padding: 2em 2em;
         list-style-type: none;
         li {
-            font-size: 150%;
+            font-size: 120%;
+            font-weight: bold;
         }
     }
 }

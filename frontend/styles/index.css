@@ -39,6 +39,12 @@ body a {
   column-gap: 2em;
   row-gap: 7em;
 }
+@media screen and (max-width: 700px) {
+  .bearsGrid {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+  }
+}
 .bearsGrid .titleGrid {
   grid-column: 1/-1;
   text-align: center;
@@ -82,12 +88,13 @@ body a {
 }
 .footer ul {
   display: flex;
-  justify-content: space-between;
-  padding: 2em 5em;
+  justify-content: space-evenly;
+  padding: 2em 2em;
   list-style-type: none;
 }
 .footer ul li {
-  font-size: 150%;
+  font-size: 120%;
+  font-weight: bold;
 }
 
 /*# sourceMappingURL=index.css.map */
