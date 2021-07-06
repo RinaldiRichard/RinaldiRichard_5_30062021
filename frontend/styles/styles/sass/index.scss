@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap');
+body {
+    background: rgb(219, 205, 215);
+    margin: 0;
+    padding: 0;
+    a {
+        text-decoration: none;
+        color: black;
+    }
+}
+
+.navflex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: burlywood;
+    padding: 2em 5em;
+    .titleLogo {
+        font-size : 1.5em;
+        font-family : Dancing Script;
+        text-decoration: none;
+        color: black;
+    }
+    .panier {
+        text-decoration: none;
+        color: black;
+    }
+    .fa-shopping-cart{
+      position: relative;
+      font-size: xx-large;
+    }
+}
+.bearsGrid {
+    margin-top: 4em;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto;
+    column-gap: 2em;
+    row-gap: 7em;
+    @media  screen and (max-width:700px) {    
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;    
+    }
+    @media screen and (min-width: 420px) and (max-width:1000px) {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: auto;
+    }
+    .titleGrid {
+    grid-column: 1/-1;
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: -5em;
+    }
+    .produit {
+        width: 100%;
+        height: 100%;
+        max-width: 450px;
+        max-height: 250px;       
+        .carteProduit {
+            width: 100%;
+            height: 100%;
+            
+            img {
+                width: inherit;
+                height: inherit;
+                background-size: cover;
+                border-radius: 20px 20px 0 0;
+            }
+        }
+        .infosProduit {
+            display: flex;
+            justify-content: space-between;
+            background-color: rgb(188, 214, 158);
+            padding: 1.5em;
+            border-radius: 0 0 20px 20px;  
+            .titreProduit {
+                font-size: 140%;
+                font-weight: bold;
+            }
+            .prixProduit {
+                font-size: 140%;
+            }          
+        }
+              
+    } 
+}
+.footer {
+    margin-top: 7em;
+    background-color: rgb(190, 166, 247);
+    ul {
+        display: flex;
+        justify-content: space-evenly;
+        padding: 2em 2em;
+        list-style-type: none;
+        li {
+            font-size: 120%;
+            font-weight: bold;
+        }
+    }
+}
+ 
+
+
+
