@@ -9,6 +9,12 @@ body a {
   color: black;
 }
 
+@media screen and (max-width: 666px) {
+  main {
+    padding: 1em;
+  }
+}
+
 .navflex {
   display: flex;
   justify-content: space-between;
@@ -51,26 +57,19 @@ body a {
     grid-template-rows: auto;
   }
 }
-.bearsGrid .titleGrid {
-  grid-column: 1/-1;
-  text-align: center;
-  font-size: 2rem;
-  margin-bottom: -5em;
-}
 .bearsGrid .produit {
   width: 100%;
   height: 100%;
   max-width: 450px;
   max-height: 250px;
 }
-.bearsGrid .produit .carteProduit {
+.bearsGrid .produit .divImageproduit {
   width: 100%;
   height: 100%;
 }
-.bearsGrid .produit .carteProduit img {
+.bearsGrid .produit .divImageproduit .img {
   width: inherit;
   height: inherit;
-  background-size: cover;
   border-radius: 20px 20px 0 0;
 }
 .bearsGrid .produit .infosProduit {
@@ -79,13 +78,14 @@ body a {
   background-color: #bcd69e;
   padding: 1.5em;
   border-radius: 0 0 20px 20px;
+  font-weight: bold;
 }
 .bearsGrid .produit .infosProduit .titreProduit {
   font-size: 140%;
-  font-weight: bold;
 }
 .bearsGrid .produit .infosProduit .prixProduit {
   font-size: 140%;
+  align-self: center;
 }
 
 .footer {
