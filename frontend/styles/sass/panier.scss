@@ -1,0 +1,54 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap');
+body {
+    background: rgb(219, 205, 215);
+    margin: 0;
+    padding: 0;
+    a {
+        text-decoration: none;
+        color: black;
+    }
+}
+
+main {
+    text-align: -webkit-center;
+    margin-top: 7em;
+    @media screen and (max-width: 666px) {
+        padding: 1em;
+    }
+}
+.navflex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: burlywood;
+    padding: 2em 5em;
+    .titleLogo {
+        font-size : 1.5em;
+        font-family : Dancing Script;
+        text-decoration: none;
+        color: black;
+    }
+    .panier {
+        text-decoration: none;
+        color: black;
+    }
+    .fa-shopping-cart{
+      position: relative;
+      font-size: xx-large;
+    }
+}
+
+h2 {
+    text-align: center;
+}
+
+.cart-card {
+    display: none;
+    flex-direction: column;
+    justify-content: space-around;
+    &__recap__flex {
+        display: flex;
+        justify-content: space-around;
+        margin : 2em;
+    }
+}
