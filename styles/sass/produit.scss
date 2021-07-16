@@ -1,0 +1,118 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap');
+body {
+    background: rgb(219, 205, 215);
+    margin: 0;
+    padding: 0;
+    a {
+        text-decoration: none;
+        color: black;
+    }
+}
+
+.navflex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: burlywood;
+    padding: 2em 5em;
+    .titleLogo {
+        font-size : 1.5em;
+        font-family : Dancing Script;
+        text-decoration: none;
+        color: black;
+    }
+    .panier {
+        text-decoration: none;
+        color: black;
+    }
+    .fa-shopping-cart{
+      position: relative;
+      font-size: xx-large;
+    }
+}
+.container {
+    text-align: -webkit-center;
+    margin-top: 7em;
+    .info {
+        width: 100%;
+        max-width: 400px;
+        background-color: blanchedalmond;
+        border-radius: 20px;
+        &__produit {
+            margin-top: 2em;
+        }
+        img {
+            width: 100%;
+            height: auto;
+            border-radius: 20px 20px 0 0;
+            object-fit: fill;
+        }
+        &__produit__titre{
+            font-weight: bold;
+            font-size: 2em;
+        }
+        &__produit__description {
+            font-size: 120%;
+            padding: 1em;
+        }
+        &__produit__prix {
+            text-align-last: end;
+            font-size: 150%;
+            margin-right: 1em;
+        }
+        &__produit__quantity {
+            text-align: justify;
+            margin: -2em 0 0 1em;
+            font-weight: bold;
+            input {
+                width: 19%;
+            }
+        }
+        &__produit__couleur {
+            text-align: justify;
+            font-weight: bold;
+            margin-left: 1em;
+        }
+        &__produit__button {
+            margin-bottom: 1em;
+        }
+    }
+    .added {
+        display: block;
+        opacity: 0;
+        border : 1px black solid;
+        margin-top: 0.5em;
+        width: 60%;
+        background-color: rgb(66, 131, 1);
+
+    }
+    .add-to-cart {
+        font-size: 150%;
+        padding: 0.5em;
+        border: 5px solid rgb(255, 142, 142);
+        border-radius: 30px;
+        font-weight: bold;
+        width: fit-content;
+    }
+    .return-index {
+        padding-bottom: 1em;
+    }
+   
+}
+
+
+
+.footer {
+    margin-top: 7em;
+    background-color: rgb(190, 166, 247);
+    ul {
+        display: flex;
+        justify-content: space-evenly;
+        padding: 2em 2em;
+        list-style-type: none;
+        li {
+            font-size: 120%;
+            font-weight: bold;
+        }
+    }
+}
