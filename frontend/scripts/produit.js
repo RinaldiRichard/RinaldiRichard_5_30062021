@@ -20,6 +20,7 @@ main();
 
 function main() {
   getArticles();
+  addToCart();
 }
 
 
@@ -40,6 +41,7 @@ function getArticles() {
         nomProduit.innerHTML = article.name;
         imgProduit.src = article.imageUrl;
         descriptionProduit.innerText = article.description;
+        prixProduit.innerText = (article.price/100).toFixed(2) + " €";
 
         let colorSelect = document.getElementById("color-select");
           for (let i = 0; i < article.colors.length; i++) {
@@ -51,6 +53,41 @@ function getArticles() {
 }
 
 
+// ----------------------------------------------------------
 
 
+function addToCart() {
+  const addToCartBtn = document.querySelector(".add-to-cart");
+  const ajout = document.querySelector(".added");
+  
+  addToCartBtn.addEventListener("click", () => {
+    if (bearNumber.value > 0 && bearNumber.value < 100) {
 
+      // Création du produit qui sera ajouté au panier
+      let productAdded = {
+        name: nomProduit.innerHTML,
+        price: parseFloat(prixProduit.innerHTML),
+        quantity: parseFloat(document.querySelector("#bearNum").value),
+        _id: id,
+        
+      };
+
+      // Gestion du localStorage
+      let arrayProductsInCart = [];
+      
+      // Si le LS existe, on récupère son contenu, on l'insère dans le tableau arrayProductsInCart, puis on le renvoit vers le localStorage avec le nouveau produit ajouté.
+      if (localStorage.getItem("products") !== null) {
+        arrayProductsInCart = JSON.parse(localStorage.getItem("products"));
+        
+        
+      // Si le LS est vide, on le crée avec le produit ajouté
+      } 
+        arrayProductsInCart.push(productAdded);
+        localStorage.setItem("products", JSON.stringify(arrayProductsInCart));
+      
+      // Visibilité du texte "produit ajouté"
+      ajout.style.opacity = 0.9;
+      setTimeout("location.reload(true);", 3000);
+  };
+  })
+}
