@@ -9,6 +9,12 @@ body {
     }
 }
 
+main {
+    @media screen and (max-width: 666px) {
+        padding: 1em;
+    }
+}
+
 .navflex {
     display: flex;
     justify-content: space-between;
@@ -41,25 +47,21 @@ body {
         grid-template-columns: 1fr;
         grid-template-rows: auto;    
     }
-    .titleGrid {
-    grid-column: 1/-1;
-    text-align: center;
-    font-size: 2rem;
-    margin-bottom: -5em;
+    @media screen and (min-width: 420px) and (max-width:1000px) {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: auto;
     }
     .produit {
         width: 100%;
         height: 100%;
-        max-width: 400px;
+        max-width: 450px;
         max-height: 250px;       
-        .carteProduit {
+        .divImageproduit {
             width: 100%;
             height: 100%;
-            
-            img {
+            .img {
                 width: inherit;
                 height: inherit;
-                background-size: cover;
                 border-radius: 20px 20px 0 0;
             }
         }
@@ -69,17 +71,19 @@ body {
             background-color: rgb(188, 214, 158);
             padding: 1.5em;
             border-radius: 0 0 20px 20px;  
+            font-weight: bold;
             .titreProduit {
                 font-size: 140%;
-                font-weight: bold;
             }
             .prixProduit {
                 font-size: 140%;
+                align-self: center;
             }          
         }
               
     } 
 }
+
 .footer {
     margin-top: 7em;
     background-color: rgb(190, 166, 247);
