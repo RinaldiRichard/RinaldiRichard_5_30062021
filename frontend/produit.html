@@ -10,12 +10,12 @@
     
     <link href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" rel="stylesheet">
     <link rel="stylesheet" href="./styles/produit.css">
+    <script src="./scripts/produit.js" defer></script>
 
 
 
     <title>Document</title>
 </head>
-
 
 <body>
     <header>
@@ -43,19 +43,20 @@
                         <select name="color" id="color-select">
                         </select>
                     </div>
-                    <div class="added-to-cart-confirmation">
-                        <p class="confirmation-text"></p>
-                    </div>
                     <div class="info__produit__buttons">
-                        <a href="index.html">
-                            <div class="info__produit__button back-to-home">
-                                Revenir à la selection
-                            </div>
-                        </a>
                         <a href="#">
+                            <div class="info__produit__button added">
+                                    <p>Produit ajouté au panier</p>
+                                </div>
                             <div class="info__produit__button add-to-cart">
                                 Ajouter au panier
                             </div>
+                            <a href="index.html">
+                                
+                                <div class="info__produit__button return-index">
+                                    Revenir à la selection
+                                </div>
+                            </a>
                         </a>
                     </div>
                 </div>
@@ -72,9 +73,5 @@
             </li>
         </ul>
     </footer>
-    
-
-    
-<script src="./scripts/produit.js" defer></script>
 </body>
 </html>
