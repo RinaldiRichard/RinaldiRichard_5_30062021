@@ -1,0 +1,55 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap');
+body {
+    background: rgb(219, 205, 215);
+    margin: 0;
+    padding: 0;
+    a {
+        text-decoration: none;
+        color: black;
+    }
+}
+
+main {
+    @media screen and (max-width: 666px) {
+        padding: 1em;
+    }
+}
+
+.navflex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: burlywood;
+    padding: 2em 5em;
+    .titleLogo {
+        font-size : 1.5em;
+        font-family : Dancing Script;
+        text-decoration: none;
+        color: black;
+    }
+    .panier {
+        text-decoration: none;
+        color: black;
+    }
+    .fa-shopping-cart{
+      position: relative;
+      font-size: xx-large;
+    }
+}
+
+
+.footer {
+    margin-top: 7em;
+    background-color: rgb(190, 166, 247);
+    ul {
+        display: flex;
+        justify-content: space-evenly;
+        padding: 2em 2em;
+        list-style-type: none;
+        li {
+            font-size: 120%;
+            font-weight: bold;
+        }
+    }
+}
+ 

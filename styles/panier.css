@@ -1,0 +1,67 @@
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap");
+body {
+  background: #dbcdd7;
+  margin: 0;
+  padding: 0;
+}
+body a {
+  text-decoration: none;
+  color: black;
+}
+
+main {
+  text-align: -webkit-center;
+  margin-top: 7em;
+}
+@media screen and (max-width: 666px) {
+  main {
+    padding: 1em;
+  }
+}
+
+.navflex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: burlywood;
+  padding: 2em 5em;
+}
+.navflex .titleLogo {
+  font-size: 1.5em;
+  font-family: Dancing Script;
+  text-decoration: none;
+  color: black;
+}
+.navflex .panier {
+  text-decoration: none;
+  color: black;
+}
+.navflex .fa-shopping-cart {
+  position: relative;
+  font-size: xx-large;
+}
+
+.cart-card {
+  display: none;
+}
+.cart-card__recap__row {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.footer {
+  margin-top: 7em;
+  background-color: #bea6f7;
+}
+.footer ul {
+  display: flex;
+  justify-content: space-evenly;
+  padding: 2em 2em;
+  list-style-type: none;
+}
+.footer ul li {
+  font-size: 120%;
+  font-weight: bold;
+}
+
+/*# sourceMappingURL=panier.css.map */
