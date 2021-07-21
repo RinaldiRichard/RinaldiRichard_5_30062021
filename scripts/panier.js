@@ -136,7 +136,7 @@ function checkFormAndPostRequest() {
           localStorage.setItem("orderId", response.orderId);
           localStorage.setItem("total", priceConfirmation[1]);
           
-          
+          /* document.location.href = "confirmation.html"; */ 
           
         })
         .catch((err) => {
