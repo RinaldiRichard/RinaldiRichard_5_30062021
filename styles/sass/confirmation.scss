@@ -37,7 +37,14 @@ main {
     }
 }
 
-
+.thanks {
+    margin-top: 10em;
+    font-size: 130%;
+    text-align: center;
+    .oribears {
+        font-family: Dancing Script;
+    }
+}
 .footer {
     margin-top: 7em;
     background-color: rgb(190, 166, 247);

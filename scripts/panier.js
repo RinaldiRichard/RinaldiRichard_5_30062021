@@ -1,7 +1,8 @@
 let cart = document.querySelector(".cart-card__recap");
 let copyOfLS = JSON.parse(localStorage.getItem("products"));
-
+console.log(copyOfLS);
 main();
+
 
 function main() {
   displayCart();
@@ -11,7 +12,7 @@ function main() {
 }
 
 function displayCart() {
-  let test = document.querySelector(".width-to-empty-cart");
+  let cleanCart = document.querySelector(".width-to-empty-cart");
   let cartCard = document.querySelector(".cart-card");
   let emptyCart = document.querySelector(".if-empty-cart");
 
@@ -21,35 +22,18 @@ function displayCart() {
     emptyCart.style.display = "none";
   }
 
-// Pour chaque objet dans le tableau copié du LS, on crée les divs de l'affichage du panier et on les remplit avec les données du tableau.
-  for (let produit in copyOfLS) {
-    let productRow = document.createElement("div");
-    cart.insertBefore(productRow, test);
-    productRow.classList.add("cart-card__recap__row", "product-row");
+  for (produit in copyOfLS) {
+    displayProduct(produit);
+  }
 
-    let productName = document.createElement("div");
-    productRow.appendChild(productName);
-    productName.classList.add("cart-card__recap__title");
-    productName.innerHTML = copyOfLS[produit].name;
+  function displayProduct() {
+    document.getElementById("test").innerHTML +=
+    `<div class="cart-card__recap__row product-row">
+    <div class="cart-card__recap__title">${copyOfLS[produit].name}</div>
+    <div class="cart-card__recap__title title-quantity">${copyOfLS[produit].quantity}</div>
+    <div class="cart-card__recap__title data-price price">${(copyOfLS[produit].price)*(copyOfLS[produit].quantity)} €</div>
+  </div>`
 
-    let productQuantity = document.createElement("div");
-    productRow.appendChild(productQuantity);
-    productQuantity.classList.add("cart-card__recap__title", "title-quantity");
-    productQuantity.innerHTML = copyOfLS[produit].quantity;
-
-    let productPrice = document.createElement("div");
-    productRow.appendChild(productPrice);
-    productPrice.classList.add(
-      "cart-card__recap__title",
-      "data-price",
-      "price"
-    );
-
-// Affichage du prix avec le formatage €
-    productPrice.innerHTML = new Intl.NumberFormat("fr-FR", {
-      style: "currency",
-      currency: "EUR",
-    }).format(copyOfLS[produit].price * copyOfLS[produit].quantity);
   }
 }
 
@@ -64,25 +48,19 @@ function countTotalInCart() {
   }
 
 // On enlève les undefined du tableau
-  arrayOfPrice = arrayOfPrice.filter((test) => {
-    return test != undefined;
-  });
+arrayOfPrice = arrayOfPrice.filter((cleanCart) => {
+  return cleanCart != undefined;
+});
 
 // Transformer en nombre chaque valeur du tableau
   arrayOfPrice = arrayOfPrice.map((x) => parseFloat(x));
 
 // Additionner les valeurs du tableau pour avoir le prix total
   const reducer = (acc, currentVal) => acc + currentVal;
-  arrayOfPrice = arrayOfPrice.reduce(reducer, 0);
+  arrayOfPrice = arrayOfPrice.reduce(reducer);
 
 // Affichage du prix avec formatage €
-  totalPrice.innerText = `Total : ${(arrayOfPrice = new Intl.NumberFormat(
-    "fr-FR",
-    {
-      style: "currency",
-      currency: "EUR",
-    }
-  ).format(arrayOfPrice))}`;
+  totalPrice.innerText = `Total : ${arrayOfPrice} €`;
 }
 
 function toEmptyCart() {
@@ -106,7 +84,7 @@ function checkFormAndPostRequest() {
   let inputMail = document.querySelector("#mail");
   let erreur = document.querySelector(".erreur");
 
-// Lors d'un clic, si l'un des champs n'est pas rempli, on affiche une erreur, on empêche l'envoi du formulaire.
+// Si un des champs n'est pas remplis lors du clic : message d'erreur + refus d'envoi du formulaire
   submit.addEventListener("click", (e) => {
     if (
       !inputName.value ||
@@ -135,30 +113,36 @@ function checkFormAndPostRequest() {
         products: productsBought,
       };
 
-// -------  Envoi de la requête POST au back-end --------
-// Création de l'entête de la requête
+/* -------  Envoi de la requête POST au back-end -------- */
+
+      // Création de l'entête de la requête
       const options = {
         method: "POST",
         body: JSON.stringify(order),
         headers: { "Content-Type": "application/json" },
       };
 
-// Préparation du prix formaté pour l'afficher sur la prochaine page
+      // Préparation du prix formaté pour l'afficher sur la prochaine page
       let priceConfirmation = document.querySelector(".total").innerText;
       priceConfirmation = priceConfirmation.split(" :");
 
-// Envoie de la requête avec l'en-tête. On changera de page avec un localStorage qui ne contiendra plus que l'order id et le prix.
+      // Envoie de la requête avec l'en-tête. Chargement de la page avec uniquement l'orderId et le prix dans le LS
+   
       fetch("http://localhost:3000/api/teddies/order", options)
         .then((response) => response.json())
-        .then((data) => {
+        .then((response) => {
+          console.log(response);
           localStorage.clear();
+          localStorage.setItem("orderId", response.orderId);
           localStorage.setItem("total", priceConfirmation[1]);
-
-          document.location.href = "confirmation.html";
+          
+          
+          
         })
         .catch((err) => {
           alert("Il y a eu une erreur : " + err);
         });
     }
+  
   });
 }

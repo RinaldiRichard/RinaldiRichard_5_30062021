@@ -10,7 +10,7 @@
     <link href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" rel="stylesheet">
 
 
-    <script src="scripts/panier.js" defer></script>
+    <script src="./scripts/panier.js" defer></script>
 
     <title>ORIBEARS | Panier</title>
 </head>
@@ -30,9 +30,9 @@
                     <div class="cart-card__recap__row ">
                         <div class="cart-card__recap__title first-line">Nom</div>
                         <div class="cart-card__recap__title title-quantity first-line">Quantité</div>
-                        <div class="cart-card__recap__title data-price first-line">Prix </div>
-
-                    </div>                     
+                        <div class="cart-card__recap__title data-price first-line">Prix </div>                        
+                    </div>   
+                    <div id="test"></div>                
                     <div class="width-to-empty-cart">
                         <a href="panier.html">
                             <div class="cart-card__form__button to-empty-cart">
@@ -46,7 +46,7 @@
                 <div class="cart-card__form">
                     <h2>Votre adresse de livraison</h2>
                     <form class="form">
-                        <div class="name-and-lastname">
+                        <div class="name-and-lastname space">
                             <div class="cart-card__form-line" id="bloc__name">
                                 <label for="name">Prénom :</label>
                                 <input type="text" placeholder="Prénom" id="name" name="user_name" required> 
@@ -56,7 +56,7 @@
                                 <input type="text" placeholder="Nom" id="lastname" name="user_lastname" required>
                             </div>
                         </div>        
-                        <div class="postal-and-city">
+                        <div class="postal-and-city space">
                             <div class="cart-card__form-line" id="bloc__postal">
                                 <label for="postal">Code postal :</label>
                                 <input type="text" placeholder="Code postal" id="postal" name="user_postal" required>
@@ -65,11 +65,11 @@
                                 <label for="city">Ville :</label>
                                 <input type="text" placeholder="Ville" id="city" name="user_city" required>
                             </div>
-                        </div>
-                        <div class="cart-card__form-line" id="bloc__adress">
-                            <label for="adress">Adresse :</label>
-                            <input type="text" placeholder="Adresse de livraison" id="adress" name="user_adress" required>
-                        </div>
+                            <div class="cart-card__form-line space" id="bloc__adress">
+                                <label for="adress">Adresse :</label>
+                                <input type="text" placeholder="Adresse de livraison" id="adress" name="user_adress" required>
+                            </div>
+                        </div>                       
                         <div class="cart-card__form-line" id="bloc__mail">
                             <label for="mail">Adresse mail :</label>
                             <input type="email" placeholder="Adresse mail" id="mail" name="user_mail" required>

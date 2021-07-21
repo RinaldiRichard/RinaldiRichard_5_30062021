@@ -61,7 +61,7 @@ function addToCart() {
   const ajout = document.querySelector(".added");
   
   addToCartBtn.addEventListener("click", () => {
-    if (bearNumber.value > 0 && bearNumber.value < 100) {
+    if (bearNumber.value > 0 ) {
 
       // Création du produit qui sera ajouté au panier
       let productAdded = {
@@ -78,7 +78,6 @@ function addToCart() {
       // Si le LS existe, on récupère son contenu, on l'insère dans le tableau arrayProductsInCart, puis on le renvoit vers le localStorage avec le nouveau produit ajouté.
       if (localStorage.getItem("products") !== null) {
         arrayProductsInCart = JSON.parse(localStorage.getItem("products"));
-        
         
       // Si le LS est vide, on le crée avec le produit ajouté
       } 

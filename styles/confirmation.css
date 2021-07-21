@@ -37,6 +37,15 @@ body a {
   font-size: xx-large;
 }
 
+.thanks {
+  margin-top: 10em;
+  font-size: 130%;
+  text-align: center;
+}
+.thanks .oribears {
+  font-family: Dancing Script;
+}
+
 .footer {
   margin-top: 7em;
   background-color: #bea6f7;
