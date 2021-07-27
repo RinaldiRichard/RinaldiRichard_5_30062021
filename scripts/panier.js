@@ -1,6 +1,7 @@
 let cart = document.querySelector(".cart-card__recap");
 let copyOfLS = JSON.parse(localStorage.getItem("products"));
-console.log(copyOfLS);
+let productsBought= [];
+
 main();
 
 
@@ -12,7 +13,6 @@ function main() {
 }
 
 function displayCart() {
-  let cleanCart = document.querySelector(".width-to-empty-cart");
   let cartCard = document.querySelector(".cart-card");
   let emptyCart = document.querySelector(".if-empty-cart");
 
@@ -33,7 +33,6 @@ function displayCart() {
     <div class="cart-card__recap__title title-quantity">${copyOfLS[produit].quantity}</div>
     <div class="cart-card__recap__title data-price price">${(copyOfLS[produit].price)*(copyOfLS[produit].quantity)} €</div>
   </div>`
-
   }
 }
 
@@ -98,45 +97,48 @@ function checkFormAndPostRequest() {
       e.preventDefault();
     }  else {
 
-// Si formulaire valide, le [] productsBought les objets qui sont les produits acheté, et order contiendra ce tableau ainsi que l'objet qui contient les infos de l'acheteur
-      let productsBought = [];
-      productsBought.push(copyOfLS);
+// Si formulaire valide, productsBought sera un tableau avec uniquement les id des produits et order contiendra ce tableau ainsi que l'objet qui contient les infos de l'acheteur
+      for (produit in copyOfLS) {
+
+      productsBought.push(copyOfLS[produit]._id);
+      
+      }
+      console.log(copyOfLS[produit]._id);
+
 
       const order = {
         contact: {
           firstName: inputName.value,
           lastName: inputLastName.value,
-          city: inputCity.value,
           address: inputAdress.value,
+          city: inputCity.value,
           email: inputMail.value,
         },
         products: productsBought,
-      };
-
-/* -------  Envoi de la requête POST au back-end -------- */
+      };      
+      
+// -------  Envoi de la requête POST au back-end -------- 
 
       // Création de l'entête de la requête
       const options = {
         method: "POST",
+        headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(order),
-        headers: { "Content-Type": "application/json" },
       };
-
+      console.log(options.body);
       // Préparation du prix formaté pour l'afficher sur la prochaine page
       let priceConfirmation = document.querySelector(".total").innerText;
       priceConfirmation = priceConfirmation.split(" :");
 
       // Envoie de la requête avec l'en-tête. Chargement de la page avec uniquement l'orderId et le prix dans le LS
-   
       fetch("http://localhost:3000/api/teddies/order", options)
         .then((response) => response.json())
         .then((response) => {
-          console.log(response);
           localStorage.clear();
           localStorage.setItem("orderId", response.orderId);
           localStorage.setItem("total", priceConfirmation[1]);
           
-          /* document.location.href = "confirmation.html"; */ 
+          document.location.href = "confirmation.html"; 
           
         })
         .catch((err) => {
