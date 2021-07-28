@@ -4,6 +4,7 @@ main();
 // Initialisation de la fonction main pour récupérer et afficher les articles
 async function main() {
   const articles = await getArticles();
+  
 
 //Vérification que le return du fetch a bien été récupérer
   console.log(articles);
@@ -28,6 +29,7 @@ return fetch("http://localhost:3000/api/teddies")
     .catch((error) => {
       alert("Connexion au serveur impossible. Merci de vérifier l'état du serveur.")
     })
+    
 }
 // Affichage des infos avec création + remplissage dynamique des éléments
 function displayArticle(article) {

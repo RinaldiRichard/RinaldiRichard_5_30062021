@@ -33,7 +33,7 @@ function getArticles() {
       .catch((error) => {
         alert("Nous n'arrivons pas à joindre le serveur, merci de recharger la page.")
       })
-
+      
 
 // On place les données reçues aux bons endroits 
 
@@ -50,7 +50,8 @@ function getArticles() {
             option.innerText = article.colors[i];
             colorSelect.appendChild(option);
       }
-    })    
+    })   
+    console.log(id); 
 }
 
 // ----------------------------------------------------------

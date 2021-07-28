@@ -15,6 +15,7 @@ function main() {
 function displayCart() {
   let cartCard = document.querySelector(".cart-card");
   let emptyCart = document.querySelector(".if-empty-cart");
+  console.log(copyOfLS);
 
 // Si le tableau copié du LS contient au moins un objet, on affiche le panier et on supprime le message d'erreur.
   if (localStorage.getItem("products")) {
@@ -126,6 +127,7 @@ function checkFormAndPostRequest() {
         body: JSON.stringify(order),
       };
       console.log(options.body);
+      
       // Préparation du prix formaté pour l'afficher sur la prochaine page
       let priceConfirmation = document.querySelector(".total").innerText;
       priceConfirmation = priceConfirmation.split(" :");
