@@ -103,12 +103,14 @@ function checkFormAndPostRequest() {
     let checkNumber = /[0-9]{5}$/;
     let resultNumber = checkNumber.test(inputPostal.value)
 
+    let checkMail = /^[\w\-\+]+(\.[\w\-]+)*@[\w\-]+(\.[\w\-]+)*\.[\w\-]{2,4}$/;
+    let resultMail = checkMail.test(inputMail.value)
+
     console.log(resultNumber);
     if (
       !inputName.value  ||
       !inputLastName.value ||
       !inputCity.value ||
-      !inputAdress.value ||
       !inputMail.value 
     ) {
       erreur.innerHTML = "Un ou plusieurs champs ne sont pas valides !";
@@ -121,6 +123,11 @@ function checkFormAndPostRequest() {
       e.preventDefault();
       erreur.innerHTML = "Merci de rentrer un code postal composé de 5 chiffres"      
       erreur.style.color = "#e71837";     
+    }
+    else if (resultMail === false) {
+      erreur.innerHTML = "Merci de renseigner une adresse mail valide !"
+      e.preventDefault();
+      erreur.style.color = "#e71837";
     }
      else {
 
