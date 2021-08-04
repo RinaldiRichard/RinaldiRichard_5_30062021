@@ -6,7 +6,7 @@ async function main() {
   const articles = await getArticles();
   
 
-//Vérification que le return du fetch a bien été récupérer
+//Vérification que le return du fetch a bien été récupéré
   console.log(articles);
 
 // Boucle pour afficher les infos

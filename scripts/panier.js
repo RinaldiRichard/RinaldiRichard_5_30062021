@@ -84,19 +84,45 @@ function checkFormAndPostRequest() {
   let inputMail = document.querySelector("#mail");
   let erreur = document.querySelector(".erreur");
 
+ // ------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
 // Si un des champs n'est pas remplis lors du clic : message d'erreur + refus d'envoi du formulaire
   submit.addEventListener("click", (e) => {
+
+    //Variable pour la vérification du code postal
+    let checkNumber = /[0-9]{5}$/;
+    let resultNumber = checkNumber.test(inputPostal.value)
+
+    console.log(resultNumber);
     if (
-      !inputName.value ||
+      !inputName.value  ||
       !inputLastName.value ||
-      !inputPostal.value ||
       !inputCity.value ||
       !inputAdress.value ||
       !inputMail.value 
     ) {
       erreur.innerHTML = "Un ou plusieurs champs ne sont pas valides !";
       e.preventDefault();
-    }  else {
+      erreur.style.color = "#e71837";
+      setTimeout("location.reload(true);", 3000);
+    } 
+    // Erreur personalisée du code postal
+     else if (resultNumber === false) {
+      e.preventDefault();
+      erreur.innerHTML = "Merci de rentrer un code postal composé de 5 chiffres"      
+      erreur.style.color = "#e71837";     
+    }
+     else {
 
 // Si formulaire valide, productsBought sera un tableau avec uniquement les id des produits et order contiendra ce tableau ainsi que l'objet qui contient les infos de l'acheteur
       for (produit in copyOfLS) {
@@ -106,7 +132,7 @@ function checkFormAndPostRequest() {
       }
       console.log(copyOfLS[produit]._id);
 
-
+      
       const order = {
         contact: {
           firstName: inputName.value,
@@ -140,7 +166,7 @@ function checkFormAndPostRequest() {
           localStorage.setItem("orderId", response.orderId);
           localStorage.setItem("total", priceConfirmation[1]);
           
-          document.location.href = "confirmation.html"; 
+        document.location.href = "confirmation.html"; 
           
         })
         .catch((err) => {

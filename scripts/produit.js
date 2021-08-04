@@ -77,8 +77,6 @@ function addToCart() {
         tabId.push(productAdded.id)
       }
 
-console.log(tabId);
-
       // Gestion du localStorage
       let arrayProductsInCart = [];
       
@@ -91,9 +89,10 @@ console.log(tabId);
         arrayProductsInCart.push(productAdded);
         localStorage.setItem("products", JSON.stringify(arrayProductsInCart));
       console.log(arrayProductsInCart);
+      
       // Visibilité du texte "produit ajouté"
       ajout.style.opacity = 0.9;
-      
+      setTimeout("location.reload(true);", 3000);
   };
   })
 }

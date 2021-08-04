@@ -82,6 +82,24 @@ main {
   width: 90%;
   justify-content: space-between;
 }
+.cart-card__form__buttons {
+  display: flex;
+  box-shadow: 0 0 20px black;
+  width: 40%;
+  justify-content: center;
+  margin-top: 1em;
+  height: 2em;
+  align-items: center;
+}
+.to-empty-cart {
+  display: flex;
+  box-shadow: 0 0 20px black;
+  width: 40%;
+  justify-content: center;
+  margin-top: 1em;
+  height: 2em;
+  align-items: center;
+}
 
 .space {
   margin-bottom: 1em;

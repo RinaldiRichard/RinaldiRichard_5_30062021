@@ -98,6 +98,11 @@ body a {
 .container .return-index {
   padding-bottom: 1em;
 }
+.select {
+  text-decoration: underline;
+  font-size: 105%;
+  font-weight: bolder;
+}
 
 .footer {
   margin-top: 7em;
