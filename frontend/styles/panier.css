@@ -1,0 +1,123 @@
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap");
+body {
+  background: #dbcdd7;
+  margin: 0;
+  padding: 0;
+}
+body a {
+  text-decoration: none;
+  color: black;
+}
+
+main {
+  text-align: -webkit-center;
+  margin-top: 7em;
+}
+@media screen and (max-width: 666px) {
+  main {
+    padding: 1em;
+  }
+}
+
+.navflex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: burlywood;
+  padding: 2em 5em;
+}
+.navflex .titleLogo {
+  font-size: 1.5em;
+  font-family: Dancing Script;
+  text-decoration: none;
+  color: black;
+}
+.navflex .panier {
+  text-decoration: none;
+  color: black;
+}
+.navflex .fa-shopping-cart {
+  position: relative;
+  font-size: xx-large;
+}
+
+.container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -ms-flex-item-align: center;
+  align-self: center;
+  width: 100%;
+}
+
+.cart-card {
+  display: none;
+  background-color: blanchedalmond;
+  border-radius: 20px;
+  box-shadow: 0 0 20px;
+}
+.cart-card__recap {
+  width: 90%;
+  border: 1px red solid;
+}
+.cart-card__recap__title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -ms-flex-item-align: center;
+  align-self: center;
+  width: 120px;
+  height: 30px;
+  font-weight: bold;
+}
+.cart-card__recap__row {
+  display: flex;
+  margin: 2em 0;
+  width: 90%;
+  justify-content: space-between;
+}
+.cart-card__form__buttons {
+  display: flex;
+  box-shadow: 0 0 20px black;
+  width: 40%;
+  justify-content: center;
+  margin-top: 1em;
+  height: 2em;
+  align-items: center;
+}
+.to-empty-cart {
+  display: flex;
+  box-shadow: 0 0 20px black;
+  width: 40%;
+  justify-content: center;
+  margin-top: 1em;
+  height: 2em;
+  align-items: center;
+}
+
+.space {
+  margin-bottom: 1em;
+}
+
+.footer {
+  margin-top: 7em;
+  background-color: #bea6f7;
+}
+.footer ul {
+  display: flex;
+  justify-content: space-evenly;
+  padding: 2em 2em;
+  list-style-type: none;
+}
+.footer ul li {
+  font-size: 120%;
+  font-weight: bold;
+}
+
+/*# sourceMappingURL=panier.css.map */

@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap');
+body {
+    background: rgb(219, 205, 215);
+    margin: 0;
+    padding: 0;
+    a {
+        text-decoration: none;
+        color: black;
+    }
+}
+
+main {
+    text-align: -webkit-center;
+    margin-top: 7em;
+    @media screen and (max-width: 666px) {
+        padding: 1em;
+    }
+}
+.navflex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: burlywood;
+    padding: 2em 5em;
+    .titleLogo {
+        font-size : 1.5em;
+        font-family : Dancing Script;
+        text-decoration: none;
+        color: black;
+    }
+    .panier {
+        text-decoration: none;
+        color: black;
+    }
+    .fa-shopping-cart{
+      position: relative;
+      font-size: xx-large;
+    }
+}
+.container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -ms-flex-item-align: center;
+    align-self: center;
+    width: 100%;    
+}
+.cart-card {
+    display: none;
+    background-color: blanchedalmond;
+    border-radius: 20px;
+    box-shadow: 0 0 20px;
+    &__recap {
+        width: 90%;
+        border: 1px red solid;
+        &__title {
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
+            justify-content: center;
+            -ms-flex-item-align: center;
+            align-self: center;
+            width: 120px;
+            height: 30px;
+            font-weight: bold;
+        }
+    }
+    &__recap__row {
+        display: flex;
+        margin: 2em 0;
+        width: 90%;
+        justify-content: space-between;
+    }
+}
+.space {
+    margin-bottom: 1em;
+}
+.footer {
+    margin-top: 7em;
+    background-color: rgb(190, 166, 247);
+    ul {
+        display: flex;
+        justify-content: space-evenly;
+        padding: 2em 2em;
+        list-style-type: none;
+        li {
+            font-size: 120%;
+            font-weight: bold;
+        }
+    }
+}
+
+

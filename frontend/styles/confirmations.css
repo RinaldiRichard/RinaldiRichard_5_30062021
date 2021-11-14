@@ -1,0 +1,64 @@
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap");
+body {
+  background: #dbcdd7;
+  margin: 0;
+  padding: 0;
+}
+body a {
+  text-decoration: none;
+  color: black;
+}
+
+@media screen and (max-width: 666px) {
+  main {
+    padding: 1em;
+  }
+}
+
+.navflex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: burlywood;
+  padding: 2em 5em;
+}
+.navflex .titleLogo {
+  font-size: 1.5em;
+  font-family: Dancing Script;
+  text-decoration: none;
+  color: black;
+}
+.navflex .panier {
+  text-decoration: none;
+  color: black;
+}
+.navflex .fa-shopping-cart {
+  position: relative;
+  font-size: xx-large;
+}
+
+.thanks {
+  margin-top: 10em;
+  font-size: 130%;
+  text-align: center;
+}
+.thanks .oribears {
+  font-family: Dancing Script;
+}
+
+.footer {
+  margin-top: 7em;
+  background-color: #bea6f7;
+}
+.footer ul {
+  display: flex;
+  justify-content: space-evenly;
+  padding: 2em 2em;
+  list-style-type: none;
+}
+.footer ul li {
+  font-size: 120%;
+  font-weight: bold;
+}
+
+/*# sourceMappingURL=confirmations.css.map */
