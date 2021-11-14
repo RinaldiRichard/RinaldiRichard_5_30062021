@@ -1,4 +1,4 @@
-# Projet 5 Openclassrooms pour la formation developpeur web
+# Projet 5 pour la formation developpeur web d'Openclassrooms
 
 Ce projet a pour but de réaliser la partie front-end d'un site de e-commerce.
 
