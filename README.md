@@ -5,7 +5,9 @@ La partie back-end est fournie par le projet.
 
 Afin de pouvoir tester ce projet, il faudra installer NodeJs.
 
-Une fois la fenêtre de Node ouverte, il suffit juste d'installer Nodemon en extention ainsi que Live Server pour pouvoir tester en local (le site n'est pas hébergé pour le moment).
+(Pour l'installation des extension permettant de le tester en local, j'utilise l'éditeur Visual Studio Code)
+
+Une fois la fenêtre de Node ouverte, il suffit juste d'installer Nodemon ainsi que Live Server en extention pour pouvoir tester en local (le site n'est pas hébergé pour le moment).
 
 Une fois fait, il ne reste plus qu'à aller dans le dossier back-end via la commande "cd backend" puis lancer le server via "nodemon server"
 Une message devrait apparaitre dans la console du terminal indiquant que l'écoute est sur le port 3000.
