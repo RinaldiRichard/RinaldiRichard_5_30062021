@@ -1,6 +1,7 @@
 # Projet 5 pour la formation developpeur web d'Openclassrooms
 
 Ce projet a pour but de réaliser la partie front-end d'un site de e-commerce.
+La partie back-end est fourni par le projet.
 
 Afin de pouvoir tester ce projet, il faudra installer NodeJs.
 
